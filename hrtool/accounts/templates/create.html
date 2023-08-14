@@ -1,0 +1,76 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block content %}
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="{% static 'images/undraw_remotely_2j6y.svg' %}" alt="Image" class="img-fluid">
+        </div>
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="mb-4">
+              <h3>Register</h3>
+              <!-- <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p> -->
+            </div>
+            <form action="{% url 'create' %}" method="post">
+            {{ form.non_field_errors }}
+            {% for field, error in form.errors.items %}
+                {{ error }}
+            {% endfor %}
+            {% csrf_token %}
+              <div class="form-group first mb-4">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username"  maxlength="10"required>
+              </div>
+                <div class="form-group first mb-4">
+                <label for="username">Mail</label>
+                <input type="email" class="form-control" id="username" name="email"  required>
+              </div>
+              <div class="form-group last mb-4">
+                <label for="password">Password, at least 8 characters</label>
+                <input type="password" class="form-control" id="password" name="password1" required>
+              </div>
+                <div class="form-group last mb-4">
+                <label for="password">Password, at least 8 characters</label>
+                <input type="password" class="form-control" id="password" name="password2" required>
+              </div>
+
+              <div class="d-flex mb-5 align-items-center">
+                <div class="form-check">
+                  <label class="form-check-label" for="term_of_use_privasy_ploicy">
+                  <input class="form-check-input" type="checkbox" value="true" id="term_of_use_privasy_ploicy" name="term_of_use_privasy_ploicy" required>
+                    By registering, you accept the Terms of use and Privacy Policy
+                  </label>
+                </div>
+              </div>
+
+              <input type="submit" value="Register" class="btn btn-block btn-primary">
+
+<!--               <span class="d-block text-left my-4 text-muted">&mdash; or login with &mdash;</span>
+
+              <div class="social-login">
+                <a href="#" class="facebook">
+                  <span class="icon-facebook mr-3"></span>
+                </a>
+                <a href="#" class="twitter">
+                  <span class="icon-twitter mr-3"></span>
+                </a>
+                <a href="#" class="google">
+                  <span class="icon-google mr-3"></span>
+                </a>
+              </div> -->
+            </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
+

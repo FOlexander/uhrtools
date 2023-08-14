@@ -1,0 +1,89 @@
+{% extends 'index.html' %}
+{% block content %}
+  <section class="ftco-section contact-section ftco-degree-bg">
+    <div class="container">
+      {% include 'messaging.html' %}
+      <div class="d-md-flex">
+        <div class="ml-md-5 align-self-center">
+          <h2 class="mb-4 text-center">How to</h2>
+          <p>Here you can receive two types of reports. The first report shows you the average retention period for your
+            company overall. The second one shows the retention period for two groups with an explanation, is there any
+            meaningful difference between these groups. If your aim is to receive a valid report, you should prepare a
+            valid data table, please follow the instructions below to prepare your data.</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 align-items-center ftco-animate">
+          <div class="tab-content ftco-animate" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-nextgen" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
+              <div class="d-md-flex">
+                <div class="one-half align-self-center">
+                  <h2 class="mb-4 text-center">Average retention period</h2>
+                  <p class="text-options">To get an average retention period report for your company, please create an
+                      Excel file with two columns. The first column is called <strong>StartDay</strong> and you must put the date of
+                      your employee's first workday here. The second column is called <strong>LastDay</strong> and shows the date of
+                      your employee's last workday. You should leave second column blank if the employee is still working.
+                      Then, download the Excel file in the form below. After that, in a few seconds, you will see a report
+                      of the retention period with explanations. Use <strong>Download example</strong> link to download file example
+                  </p>
+                  <a href="../uploads/EO.xlsx" download>Download example</a>
+                </div>
+                  <div class="one-half ml-md-5 align-self-center">
+                    <h2 class="mb-4 text-center">Retention period for the two groups</h2>
+                    <p class="text-options">To get the retention period for the two groups with an explanation, you have to
+                      make the same Excel file, but add a third column named <strong>Factor</strong> with any attribute that has two
+                      options, for example, gender(female, male), education (college, high school ), mentoring program
+                      participation (yes, no). Then upload the file, and you will see a report with explanations! Use <strong>Download
+                      example</strong> link to download file example</p>
+                    <a href="extemp/ET.xlsx" download>Download example</a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 align-items-center ftco-animate">
+          <div class="tab-content ftco-animate" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-nextgen" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
+              <div class="d-md-flex">
+                <div class="one-half align-self-center">
+                  <form method="post" enctype="multipart/form-data">
+                    {% if error %}
+                    <p style="color:#0d6efd">{{ error }}</p>
+                    {% endif %}
+                    <div class="input-group mb-3">
+                      {% csrf_token %}
+                      <input type="file" class="form-control" id="inputGroupFile02" name="file" required>
+                      <button type="submit" class="btn btn-primary">Upload</button>
+                    </div>
+                  </form>
+                </div>
+                <div class="one-half align-self-center">
+                  <div class="ml-md-5 align-self-center">
+                    <h2 class="mb-4 text-center">Data check</h2>
+                      <p><em>Please double check that you have organized your data in proper way</em></p>
+                      <ul>
+                        <li>First column named "StartDat - first working day of your employee"</li>
+                        <li>Second column named "LastDay - last working day of your employee or blank</li>
+                        <li>Fird column<em>(optional)</em> named "Factor" - any valuable factor on your opinion</li>
+                      </ul>
+  <!--                          <a href="extemp/ET.xlsx" download>Download example</a>report for your company</a></p>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--<form method="post" enctype="multipart/form-data">-->
+  <!--  {% csrf_token %}-->
+  <!--  {{ form.as_p }}-->
+  <!--  <button type="submit">Upload</button>-->
+  <!--</form>-->
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+{% block content%}
+<section class="ftco-section contact-section ftco-degree-bg">
+    <div class="container col-10">
+        <div class="row text-center">
+            <img class="col-xl-8 " src="{{ chart }}" frameborder="0" alt="Красивый график"></img>
+            {% if Name == "KMF" %}
+                <p class="va col-12 col-xl-4 text-left">This chart gives you a general understanding of the median employee retention period in your company.
+                    The horizontal axis represents time in months, and the vertical axis shows the probability of surviving or the proportion of people surviving.
+                    Time zero is a first working day of employee the survival probability is 1.0 (or 100% of the employees are working in the company). As we can see from your data:<br>
+                    After <strong>3</strong> months of working, company leaves <strong>{{ Hazard3m }}%</strong> of employee<br>
+                    After <strong>6</strong> months of working, company leaves <strong>{{ Hazard6m }}%</strong> of employee.<br>
+                    After <strong>12</strong> months of working, company leaves <strong>{{ Hazard12m }}%</strong> of employee.<br>
+                    <strong>Median</strong> tenure at the company is <strong>{{ AvarageSurvival }}</strong> months.</p>
+            {% elif Name == "Long-Rank" %}
+                <p class="va col-12 col-xl-4 text-left">This chart gives you an understanding of the median retention period of two groups of employee.
+                    The horizontal axis represents time in months, and the vertical axis shows the probability of surviving or the proportion of people surviving.
+                    Time zero is a first working day of employee the survival probability is 1.0 (or 100% of the employees are working in the company). As we can see from your data:<br>
+                    General overview for Group <strong>{{GroupbName}}</strong>:<br>
+                    After <strong>3</strong> months of working, company leaves <strong>{{ Hazardb3m }}%</strong> of employee<br>
+                    After <strong>6</strong> months of working, company leaves <strong>{{ Hazardb6m }}%</strong> of employee.<br>
+                    After <strong>12</strong> months of working, company leaves <strong>{{ Hazardb12m }}%</strong> of employee.<br>
+                    <strong>Median</strong> tenure at the company are <strong>{{ AvarageSurvivalb }}</strong> months.<br>
+                    General overview for Group <strong>{{GroupbnName}}</strong>:<br>
+                    After <strong>3</strong> months of working, company leaves <strong>{{ Hazardnb3m }}%</strong> of employee<br>
+                    After <stron                    g>6</strong> months of working, company leaves <strong>{{ Hazardnb6m }}%</strong> of employee.<br>
+                    After <strong>12</strong> months of working, company leaves <strong>{{ Hazardnb12m }}%</strong> of employee.<br>
+                    <strong>Median</strong> tenure at the company are <strong>{{ AvarageSurvivalnb }}</strong> months.<br>
+                    {{ pvaluetext }}
+                </p>
+            {% endif %}
+                <a href="{{ chart }}" download><button class="btn btn-primary px-4 py-3 mt-2">Download chart</button></a>
+
+        </div>
+    </div>
+    <br>
+    <div class="container col-10">
+        <div class="row text-center">
+            <p class="va col-12 ">
+                Are you ready to take your business to new heights with cutting-edge data analytics?
+                Look no further! Our SAAS data analytic service is here to revolutionize the way you analyze and interpret
+                your business data.
+                Get in Touch: Reach out to our experienced team of data analytics professionals by calling XXX-XXX-XXXX or
+                email us at info@yourcompany.com. We can't wait to show you the power of our SAAS data analytic service
+                and help you achieve unparalleled success!
+                Don't let your data go untapped. Act now and unlock the true potential of your business with our SAAS data analytic service. Contact us today!
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock%}

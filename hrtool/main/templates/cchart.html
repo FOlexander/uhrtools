@@ -1,0 +1,140 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+<section class="ftco-section bg-light">
+	<div class="container">
+		<div class="row justify-content-center mb-5">
+			<div class="col-md-7 text-center heading-section ftco-animate">
+				<h2 class="mb-3">How it works</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 align-items-center ftco-animate">
+				<div class="tab-content ftco-animate" id="v-pills-tabContent">
+					<div class="tab-pane fade show active" id="v-pills-nextgen" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
+						<div class="d-md-flex">
+			<!--	              	<div class="one-forth align-self-center">-->
+			<!--	              		<img src="images/undraw_laravel_and_vue_59tp.svg" class="img-fluid" alt="">-->
+			<!--	              	</div>-->
+							<div class="ml-md-5 align-self-center">
+								<h2 class="mb-4 text-center">How Control Chart can help HR professional!!!</h2>
+								<p>Chart Control is a valuable tool for HR professionals in analyzing and monitoring
+									various HR metrics and processes. By utilizing Chart Control, HR departments can
+									visually represent data over time, allowing for easy identification of trends,
+									patterns, and deviations from established benchmarks or thresholds. HR can leverage
+									Chart Control to track and manage employee retention rates, performance metrics, recruitment
+									effectiveness, employee satisfaction and engagement levels, and compliance metrics.
+									This enables data-driven decision-making, proactive interventions, and continuous
+									improvement in HR practices to drive organizational success.</p>
+			<!--		                <p><a href="#" class="btn btn-primary py-2">Receive report for your company</a></p>-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 align-items-center ftco-animate">
+            	<div class="tab-content ftco-animate" id="v-pills-tabContent">
+              		<div class="tab-pane fade show active" id="v-pills-nextgen" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
+              			<div class="d-md-flex">
+							<div class="one-half align-self-center">
+	              				<img src="{% static 'static/images/KM03.png' %}" class="img-fluid" alt="">
+	              			</div>
+							<div class="one-half ml-md-5 align-self-center">
+								<h2 class="mb-4">The median employee retention period in the company.</h2>
+								<ul>
+									<li>This visualization gives you a general understanding of the employee retention period. We see that the median tenure at the company is 16 months.</li>
+									<li>It means that 50% of the company's workers work longer for this period, and 50% will work less.</li>
+									<li>Also, we can see that only 27% of employees keep working in the company after the 2 years.</li>
+								</ul>
+								<p><a href="{% url 'dload' chart_type='control'  %}" class="btn btn-primary py-2">Receive report for your company</a></p>
+		              		</div>
+	              		</div>
+              		</div>
+            	</div>
+          	</div>
+        </div>
+		<div class="row">
+			<div class="col-md-12 align-items-center ftco-animate">
+            	<div class="tab-content ftco-animate" id="v-pills-tabContent">
+              		<div class="tab-pane fade show active" id="v-pills-nextgen" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
+              			<div class="d-md-flex">
+							<div class="one-half ml-md-5 align-self-center">
+		                		<h2 class="mb-4">The median employee retention periode of 2 groups of workers in the company.</h2>
+								<ul>
+									<li>In the graph, we see data along the average length of time 2 groups of workers have worked at the company, they are female and male.</li>
+									<li>The median retention period of female in the company is 12 months, and the median retention period of male in the company is 18 months. As we can see on the graph <strong data-title="In null-hypothesis significance testing, the p-value is the probability of obtaining test results at least as extreme as the result actually observed, under the assumption that the null hypothesis is correct. A very small p-value means that such an extreme observed outcome">"p-value"</strong> less 0.05 for us it means that, female retention period in the company significatively less. </li>
+									<li>This information is a great point to start research about why company have such situation and what should we change to increase female lifetime in the company.</li>
+								</ul>
+								<p><a href="{% url 'dload' chart_type='control'  %}" class="btn btn-primary py-2">Receive report for your company</a></p>
+		              		</div>
+							<div class="one-half align-self-center">
+	              				<img src="{% static 'static/images/LR.png' %}" class="img-fluid" alt="">
+	              			</div>
+	              		</div>
+              		</div>
+            	</div>
+          	</div>
+        </div>
+		<div class="row">
+			<div class="col-md-12 align-items-center ftco-animate">
+            	<div class="tab-content ftco-animate" id="v-pills-tabContent">
+              		<div class="tab-pane fade show active" id="v-pills-nextgen" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
+              			<div class="d-md-flex">
+							<div class="one-half align-self-center">
+	              				<img src="{% static 'static/images/LRM.png' %}" class="img-fluid" alt="">
+	              			</div>
+							<div class="one-half ml-md-5 align-self-center">
+								<h2 class="mb-4">The median employee retention periode of 2 groups of workers work in the company.</h2>
+								<ul>
+									<li>The chart shows the retention period of 2 groups of workers. Group named "Mentor" - had a mentor during the probation period, while the "No Mentor" group did not.</li>
+									<li>The median retention period of a "Mentor" group in the company is more than 16 months and the median retention period of "No Mentor" group is less than 9 months. As we can see on the graph <strong data-title="In null-hypothesis significance testing, the p-value is the probability of obtaining test results at least as extreme as the result actually observed, under the assumption that the null hypothesis is correct. A very small p-value means that such an extreme observed outcome">"p-value"</strong> less 0.05 for us it means that, "No Mentor" group retention period in the company significatively less.</li>
+									<li>By reducing the mentoring program, the company wanted to reduce the burden on current employees. After acquiring such effects, it was decided to return to this program. This data helped to understand the importance of the Mentoring program and made necessary changes.</li>
+								</ul>
+								<p><a href="{% url 'dload' chart_type='control'  %}" class="btn btn-primary py-2">Receive report for your company</a></p>
+		              		</div>
+	              		</div>
+              		</div>
+            	</div>
+          	</div>
+        </div>
+		<div class="row">
+			<div class="col-md-12 align-items-center ftco-animate">
+            	<div class="tab-content ftco-animate" id="v-pills-tabContent">
+              		<div class="tab-pane fade show active" id="v-pills-nextgen" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
+              			<div class="d-md-flex">
+							<div class="one-half ml-md-5 align-self-center">
+		                		<h2 class="mb-4">Visualization of the retention period of employees in 2 departments divided by three groups.</h2>
+								<p>By taking a quick look at the graph, you can immediately determine in which of the departments and in which group the employee's retention period is the longest, and in which one the shorter. Based on these data, we can offer further insights to understand the reasons for such tenure among the employees of the "A" department of the "Experienced" employees group.</p>
+								<p><a href="{% url 'dload' chart_type='control'  %}" class="btn btn-primary py-2">Receive report for your company</a></p>
+		              		</div>
+							<div class="one-half align-self-center">
+	              				<img src="{% static 'static/images/LR4M.png' %}" class="img-fluid" alt="">
+	              			</div>
+	              		</div>
+              		</div>
+            	</div>
+          	</div>
+        </div>
+		<div class="row">
+			<div class="col-md-12 align-items-center ftco-animate">
+            	<div class="tab-content ftco-animate" id="v-pills-tabContent">
+              		<div class="tab-pane fade show active" id="v-pills-nextgen" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
+              			<div class="d-md-flex">
+							<div class="one-half align-self-center">
+	              				<img src="{% static 'static/images/PD.png' %}" class="img-fluid" alt="">
+	              			</div>
+							<div class="one-half ml-md-5 align-self-center">
+								<h2 class="mb-4">Estimate retention period</h2>
+								<p>If you start using survival analysis, you will be able to estimate tenure of necomers by applying key facts that affect tenure.</p>
+								<p><a href="{% url 'dload' chart_type='control'  %}" class="btn btn-primary py-2">Receive report for your company</a></p>
+		              		</div>
+	              		</div>
+              		</div>
+            	</div>
+          	</div>
+        </div>
+	</div>
+</section>
+{% endblock %}

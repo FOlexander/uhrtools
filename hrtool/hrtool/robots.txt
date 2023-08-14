@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /uploads/
+
+
+
+User-agent: Googlebot
+Disallow: /uploads/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /admin/
+
+Sitemap: https://www.example.com/sitemap.xml

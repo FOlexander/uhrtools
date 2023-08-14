@@ -1,0 +1,308 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CoHost - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+    
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+<!--    <link rel="stylesheet" href="static/css/style.css">-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/logstyle.css' %}">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'css/images/site.webmanifest' %}">
+
+  </head>
+  <body>
+    
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="/">HRAT</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+<!--	          <li class="nav-item"><a href="#why" class="nav-link">WHY</a></li>-->
+<!--	          <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>-->
+	          <li class="nav-item"><a class="nav-link" href="{% url 'surv' %}">Survival Analytics</a></li>
+<!--	          <li class="nav-item"><a href="{% url 'cchart' %}" class="nav-link">Control Chart</a></li>-->
+<!--	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>-->
+            {% if user.is_authenticated %}
+                <li class="nav-item cta"><a href="{% url 'account' %}" class="nav-link">{{ user|title }}</a></li>
+	            <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Logout</a></li>
+            {% else %}
+	          <li class="nav-item cta"><a href="{% url 'login'  %}" class="nav-link"><span>Log in</span></a></li>
+                <li class="nav-item"><a href="{% url 'create' %}" class="nav-link">Registr</a></li>
+            {% endif %}
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+{% block content %}
+
+    <div class="hero-wrap js-fullheight">
+      <div class="overlay"></div>
+      <div class="container-fluid px-0">
+      	<div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
+	      	<img class="one-third js-fullheight align-self-end order-md-last img-fluid" src="static/images/undraw_pair_programming_njlp.svg" alt="">
+	        <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
+	        	<div class="text mt-5">
+	        		<span class="subheading">Analytics tools for HR</span>
+	            <h1 class="mb-3"><span>HR</span> <span>Analytics</span> <span>Tools</span></h1>
+	            <p>Empower you to leverage the power of data to make informed decisions, improve employee retention, optimize workforce planning, and drive business success..</p>
+	            <p><a href="#services" class="btn btn-primary px-4 py-3">Receive report for your company</a></p>
+	          </div>
+	        </div>
+	    	</div>
+      </div>
+    </div>
+  
+    <section class="ftco-section services-section bg-light" id="why">
+      <div class="container">
+      	<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <h2 class="mb-4">Why You need HR Analytics</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-flex align-items-center">
+            	<div class="icon d-flex align-items-center justify-content-center order-md-last">
+            		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
+            	</div>
+              <div class="media-body pl-4 pl-md-0 pr-md-4 text-md-right">
+                <h3 class="heading">Better hiring decisions</h3>
+                <p class="mb-0">By using HR analytics, businesses can gain insights into their hiring process and identify areas for improvement.</p>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-6 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-flex align-items-center">
+            	<div class="icon d-flex align-items-center justify-content-center">
+            		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-hand-thumbs-up" viewBox="0 0 16 16">
+                      <path d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111L8.864.046zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z"/>
+                    </svg>
+            	</div>
+              <div class="media-body pl-4">
+                <h3 class="heading">Improved employee engagement</h3>
+                <p class="mb-0">HR analytics can provide insights into employee satisfaction, sentiment, and engagement levels.</p>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-6 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-flex align-items-center">
+            	<div class="icon d-flex align-items-center justify-content-center order-md-last">
+            		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-magnet" viewBox="0 0 16 16">
+                      <path d="M8 1a7 7 0 0 0-7 7v3h4V8a3 3 0 0 1 6 0v3h4V8a7 7 0 0 0-7-7Zm7 11h-4v3h4v-3ZM5 12H1v3h4v-3ZM0 8a8 8 0 1 1 16 0v8h-6V8a2 2 0 1 0-4 0v8H0V8Z"/>
+                    </svg>
+            	</div>
+              <div class="media-body pl-4 pl-md-0 pr-md-4 text-md-right">
+                <h3 class="heading">Talent retention</h3>
+                <p>HR analytics can help businesses to identify the key drivers of employee turnover and take action to address these issues.</p>
+              </div>
+            </div>      
+          </div>
+					<div class="col-md-6 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-flex align-items-center">
+            	<div class="icon d-flex align-items-center justify-content-center">
+            		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-pie-chart" viewBox="0 0 16 16">
+                      <path d="M7.5 1.018a7 7 0 0 0-4.79 11.566L7.5 7.793V1.018zm1 0V7.5h6.482A7.001 7.001 0 0 0 8.5 1.018zM14.982 8.5H8.207l-4.79 4.79A7 7 0 0 0 14.982 8.5zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+                    </svg>
+            	</div>
+              <div class="media-body pl-4">
+                <h3 class="heading">Better workforce planning</h3>
+                <p> HR analytics can provide insights into workforce demographics, skills, and performance.</p>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-6 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-flex align-items-center">
+            	<div class="icon d-flex align-items-center justify-content-center order-md-last">
+            		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">
+                      <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"/>
+                      <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
+                    </svg>
+            	</div>
+              <div class="media-body pl-4 pl-md-0 pr-md-4 text-md-right">
+                <h3 class="heading">Improved compliance</h3>
+                <p>HR analytics can help businesses to monitor compliance with labor laws, diversity and inclusion policies, and other HR regulations.</p>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-6 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-flex align-items-center">
+            	<div class="icon d-flex align-items-center justify-content-center">
+            		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-calculator" viewBox="0 0 16 16">
+                      <path d="M12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z"/>
+                      <path d="M4 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-2zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-4z"/>
+                    </svg>
+            	</div>
+              <div class="media-body pl-4">
+                <h3 class="heading">Cost savings</h3>
+                <p>By using HR analytics to identify inefficiencies and areas for improvement, businesses can save money on recruiting costs, training expenses, and other HR-related expenses.</p>
+              </div>
+            </div>      
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section ftco-no-pt ftc-no-pb" id="services">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-lg-6 py-5">
+    				<img src="static/images//undraw_podcast_q6p7.svg" class="img-fluid" alt="">
+    				<div class="heading-section ftco-animate mt-5">
+	            <h2 class="mb-4">Our Main Services</h2>
+	          </div>
+    			</div>
+    			<div class="col-lg-6 py-5">
+    				<div class="row">
+    					<div class="col-md-6 ftco-animate">
+    						<div class="media block-6 services border text-center">
+		            	<div class="icon d-flex align-items-center justify-content-center">
+		            		<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-hourglass-split" viewBox="0 0 16 16">
+                              <path d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2h-7zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48V8.35zm1 0v3.17c2.134.181 3 1.48 3 1.48a3.5 3.5 0 0 0-1.989-3.158C8.978 9.586 8.5 9.052 8.5 8.351z"/>
+                            </svg>
+		            	</div>
+		              <div class="mt-3 media-body media-body-2">
+		                <h3 class="heading">Survival Analysis</h3>
+		                <p>Helps you identify the factors that influence employee retention and make data-driven decisions to improve your organization's workforce planning and talent management strategies</p>
+                        <a href="{% url 'surv' %}" class="btn btn-primary d-block px-3 py-3 mb-4">Receive report for your company</a>
+		              </div>
+		            </div>
+    					</div>
+    					<div class="col-md-6 ftco-animate">
+    						<div class="media block-6 services border text-center">
+		            	<div class="icon d-flex align-items-center justify-content-center">
+		            		<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-bar-chart-line" viewBox="0 0 16 16">
+                              <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z"/>
+                            </svg>
+		            	</div>
+		              <div class="mt-3 media-body media-body-2">
+		                <h3 class="heading">Control chart</h3>
+		                <p>Helps you identify patterns and trends in employee turnover, empowering you to take proactive steps to reduce turnover rates and retain top talent in your organization.</p>
+                        <a href="" class="btn btn-secondary d-block px-3 py-3 mb-4">Under construction</a>
+		              </div>
+		            </div>
+    					</div>
+    				</div>
+          </div>
+    		</div>
+    	</div>
+    </section>
+{% endblock %}
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+<!--          <div class="col-md">-->
+<!--            <div class="ftco-footer-widget mb-4 bg-primary p-4">-->
+<!--              <h2 class="ftco-heading-2">CoHost</h2>-->
+<!--              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>-->
+<!--              <ul class="ftco-footer-social list-unstyled mb-0">-->
+<!--                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>-->
+<!--                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>-->
+<!--                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--          </div>-->
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+<!--              <h2 class="ftco-heading-2">Unseful Links</h2>-->
+              <ul class="list-unstyled">
+                <li><a href="#" class="py-2 d-block">Term of use</a></li>
+                <li><a href="#" class="py-2 d-block">Privacy policy</a></li>
+              </ul>
+            </div>
+          </div>
+<!--          <div class="col-md">-->
+<!--             <div class="ftco-footer-widget mb-4">-->
+<!--              <h2 class="ftco-heading-2">Navigational</h2>-->
+<!--              <ul class="list-unstyled">-->
+<!--                <li><a href="#" class="py-2 d-block">Home</a></li>-->
+<!--                <li><a href="#" class="py-2 d-block">Domain</a></li>-->
+<!--                <li><a href="#" class="py-2 d-block">Hosting</a></li>-->
+<!--                <li><a href="#" class="py-2 d-block">About</a></li>-->
+<!--                <li><a href="#" class="py-2 d-block">Blog</a></li>-->
+<!--                <li><a href="#" class="py-2 d-block">Contact</a></li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--          </div>-->
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+<!--            	<h2 class="ftco-heading-2">Office</h2>-->
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+  <script src="{% static 'js/scrollax.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'js/google-map.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/logmain.js' %}"></script>
+
+  </body>
+</html>
